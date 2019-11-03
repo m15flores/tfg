@@ -1,0 +1,31 @@
+<div class="decorator"></div>
+<div class="form-container">
+    <mat-card class="card">
+        <mat-card-header>
+            <mat-progress-bar *ngIf="loading" mode="indeterminate" color="primary" class="progress-bar"></mat-progress-bar>
+
+            <div mat-card-avatar class="header-image"></div>
+            <mat-card-title>Iniciar sesión</mat-card-title>
+            <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+        </mat-card-header>
+        <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+        <mat-card-content class="formulario">
+
+            <form class="formulario">
+
+                <mat-form-field>
+                    <input matInput [(ngModel)]="usuario" placeholder="Nombre de usuario" [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput [(ngModel)]="password" type="password" placeholder="Contraseña" [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+
+                <button mat-button type="submit" (click)="login()">Iniciar sesion</button>
+
+            </form>
+
+        </mat-card-content>
+
+    </mat-card>
+</div>

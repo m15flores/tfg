@@ -1,0 +1,74 @@
+@import "../../../scss/variables.scss";
+.total-container {
+    display: flex;
+    .card-container {
+        flex-grow: 5;
+        display: flex;
+        justify-content: center;
+        .card {
+            margin-bottom: 20px;
+            z-index: 2;
+            width: 80%;
+            overflow: hidden;
+            .header-image {
+                background-image: url('../../../assets/user-male-icon.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 0;
+            }
+            .mat-card-subtitle a {
+                color: $accent;
+            }
+            .manualDivider {
+                border-bottom: 1px solid;
+                display: block;
+                opacity: 0.2;
+            }
+            .tab {
+                overflow: hidden;
+            }
+            .generalDataRow {
+                margin: 0 auto;
+                width: 70%;
+            }
+        }
+    }
+    .actionButtonContainer {
+        flex-grow: 1;
+        button {
+            float: right;
+            margin-right: 10px;
+        }
+    }
+}
+
+.docenciaProfesor {
+    font-size: 17px;
+    .moreTabs{
+        display: flex;
+        justify-content: space-around;
+    }
+    mat-card {
+        width: 300px;
+        margin: 5px;
+    }
+    mat-card-title {
+        font-size: 17px;
+    }
+    mat-card-subtitle {
+        font-size: 17px;
+    }
+    mat-card-content {
+        font-size: 17px;
+    }
+    mat-card-actions {
+        font-size: 17px;
+    }
+}
+
+.go-gestor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:5px;
+}

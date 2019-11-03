@@ -1,0 +1,18 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.card {
+    z-index: 2;
+    width: 80%;
+}
+.formulario {
+    display: flex;
+    flex-direction: column;
+}
+.reiniciar-docencia{
+    width: fit-content;
+    align-self: flex-end;
+}

@@ -1,0 +1,91 @@
+<mat-sidenav-container class="sidenav-container" color="primary">
+    <mat-sidenav #sidenav mode="side" opened="true" class="sidenav">
+        <div class="user-container">
+            <div class="icon-container">
+                <div class="user-icon"></div>
+            </div>
+            <span class="username-container">{{usuario.usuario.first_name}} {{usuario.usuario.last_name}} </span>
+        </div>
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+
+        <div class="slidenav-buttons">
+            <button mat-button class="dash-button" routerLink="/dashboard">
+                <span class="menu-button-content">
+                    <mat-icon>home</mat-icon>
+                    DASHBOARD
+                </span>
+            </button>
+            <mat-divider></mat-divider>
+            <p class="menu-title">Listas</p>
+            <button mat-button routerLink="/asignaturas">
+                <span class="menu-button-content">
+                    <mat-icon>visibility</mat-icon>
+                    ASIGNATURAS
+                </span>
+            </button>
+            <button mat-button routerLink="/profesores">
+                <span class="menu-button-content">
+                    <mat-icon>school</mat-icon>
+                    PROFESORES
+                </span>
+            </button>
+            <mat-divider></mat-divider>
+            <p class="menu-title">Docencia</p>
+            <button mat-button routerLink="/eleccion-docencia" (click)="sidenav.toggle()" *ngIf="profesoresLength">
+                <span class="menu-button-content">
+                    <mat-icon>view_list</mat-icon>
+                    DOCENCIA
+                </span>
+            </button>
+            <mat-divider></mat-divider>
+            <p class="menu-title">Configuración</p>
+            <button mat-button routerLink="/mi-cuenta" *ngIf="miCuenta">
+                <span class="menu-button-content">
+                    <mat-icon>account_box</mat-icon>
+                    MI CUENTA
+                </span>
+            </button>
+            <button mat-button *ngIf="admin" routerLink="/config">
+                <span class="menu-button-content">
+                    <mat-icon>settings</mat-icon>
+                    CONFIGURACIÓN
+                </span>
+            </button>
+            <mat-divider *ngIf="admin"></mat-divider>
+            <mat-divider></mat-divider>
+            <button mat-button class="dash-button" routerLink="/salir">
+                <span class="menu-button-content">
+                    <mat-icon>exit_to_app</mat-icon>
+                    SALIR
+                </span>
+            </button>
+        </div>
+
+        <div class="sticky-image-wrapper">
+            <img src="../../../assets/logo-ucm.jpg" alt="Universidad Complutense de Madrid" width="180px" height="46px">
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <button mat-button (click)="sidenav.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <span>{{title}}</span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+
+        <router-outlet *ngIf="!loading"></router-outlet>
+        
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<div *ngIf="loading" class="loading">
+    <div class="logo">
+        <img src="../../assets/logo-eleccion.png">
+    </div>
+    <div class="logo cargando">
+        <img src="../../assets/cargando.gif">
+    </div>
+</div>

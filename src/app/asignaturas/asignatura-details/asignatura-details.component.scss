@@ -1,0 +1,42 @@
+@import "../../../scss/variables.scss";
+.total-container {
+    display: flex;
+    .card-container {
+        flex-grow: 5;
+        display: flex;
+        justify-content: center;
+        .card {
+            margin-bottom: 20px;
+            z-index: 2;
+            width: 80%;
+            overflow: hidden;
+            a {
+                color: $accent;
+            }
+            .header-image {
+                background-image: url('../../../assets/books.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .manualDivider {
+                border-bottom: 1px solid;
+                display: block;
+                opacity: 0.2;
+            }
+            .tab {
+                overflow: hidden;
+            }
+            .generalDataRow {
+                margin: 0 auto;
+                width: 70%;
+            }
+        }
+    }
+    .actionButtonContainer {
+        flex-grow: 1;
+        button {
+            float: right;
+            margin-right: 10px;
+        }
+    }
+}
